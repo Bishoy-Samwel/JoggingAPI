@@ -12,6 +12,7 @@ module Users
 
     def register_success
       render json: {
+        code: 200,
         message: 'Signed up.',
         user: current_user
       }, status: :ok
