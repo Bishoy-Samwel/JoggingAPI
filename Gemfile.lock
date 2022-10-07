@@ -82,7 +82,7 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-    devise-jwt (0.9.0)
+    devise-jwt (0.10.0)
       devise (~> 4.0)
       warden-jwt_auth (~> 0.6)
     dotenv (2.8.1)
@@ -104,7 +104,7 @@ GEM
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     io-console (0.5.11)
-    irb (1.4.1)
+    irb (1.4.2)
       reline (>= 0.3.0)
     json (2.6.2)
     jwt (2.5.0)
@@ -214,7 +214,7 @@ DEPENDENCIES
   bootsnap
   debug
   devise
-  devise-jwt (~> 0.9.0)
+  devise-jwt (~> 0.10.0)
   dotenv-rails
   pg (~> 1.1)
   puma (~> 5.0)

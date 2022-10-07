@@ -50,6 +50,6 @@ group :development do
 end
 
 gem 'devise'
-gem 'devise-jwt', '~> 0.9.0'
+gem 'devise-jwt', '~> 0.10.0'
 gem 'rack-cors', '~> 1.1', '>= 1.1.1'
 gem 'dotenv-rails', groups: [:development, :test]
