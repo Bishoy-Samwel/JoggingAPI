@@ -16,7 +16,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_07_154421) do
 
   create_table "jogging_times", force: :cascade do |t|
     t.integer "distance"
-    t.datetime "date"
+    t.date "date"
     t.time "time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
