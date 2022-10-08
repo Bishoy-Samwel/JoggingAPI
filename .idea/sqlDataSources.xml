@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DdlMappings">
+    <mapping uuid="315676a6-ba94-42a5-a889-5bb4a5396247" name="Rails joggingAPI: development Mapping">
+      <data-sources db="4fb6e1f4-a058-4a1f-93bc-e8d71218c8c4" ddl="a2dbba0e-5d68-4794-97f4-623d52fe507d" />
+      <scope>
+        <node kind="database" negative="1">
+          <node kind="schema" negative="1" />
+        </node>
+      </scope>
+    </mapping>
+  </component>
+  <component name="SqlDataSourceStorage">
+    <option name="dataSources">
+      <list>
+        <State>
+          <option name="id" value="a2dbba0e-5d68-4794-97f4-623d52fe507d" />
+          <option name="name" value="Rails joggingAPI: development (DDL)" />
+          <option name="languageId" value="SQLite" />
+          <option name="urls">
+            <array />
+          </option>
+        </State>
+      </list>
+    </option>
+  </component>
+</project>
