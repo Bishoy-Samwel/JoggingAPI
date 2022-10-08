@@ -91,9 +91,9 @@ GEM
       railties (>= 3.2)
     dry-auto_inject (0.9.0)
       dry-container (>= 0.3.4)
-    dry-configurable (0.15.0)
-      concurrent-ruby (~> 1.0)
+    dry-configurable (0.16.0)
       dry-core (~> 0.6)
+      zeitwerk (~> 2.6)
     dry-container (0.11.0)
       concurrent-ruby (~> 1.0)
     dry-core (0.8.1)
@@ -133,7 +133,6 @@ GEM
     parallel (1.22.1)
     parser (3.1.2.1)
       ast (~> 2.4.1)
-    pg (1.4.3)
     puma (5.6.5)
       nio4r (~> 2.0)
     racc (1.6.0)
@@ -191,6 +190,7 @@ GEM
     rubocop-ast (1.21.0)
       parser (>= 3.1.1.0)
     ruby-progressbar (1.11.0)
+    sqlite3 (1.5.2-x86_64-linux)
     thor (1.2.1)
     timeout (0.3.0)
     tzinfo (2.0.5)
@@ -217,12 +217,12 @@ DEPENDENCIES
   devise
   devise-jwt (~> 0.10.0)
   dotenv-rails
-  pg (~> 1.1)
   puma (~> 5.0)
   rack-cors (~> 1.1, >= 1.1.1)
   rails (~> 7.0.4)
   rolify
   rubocop
+  sqlite3 (~> 1.4)
   tzinfo-data
 
 RUBY VERSION
