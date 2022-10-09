@@ -4,12 +4,13 @@ class UsersController < ApplicationController
   # GET /users
   def index
     @users = User.all
-
+    authorize @users
     render json: @users
   end
 
   # GET /users/1
   def show
+    authorize @users
     render json: @user
   end
 
@@ -26,6 +27,7 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1
   def update
+    authorize @users
     if @user.update(user_params)
       render json: @user
     else
@@ -35,6 +37,7 @@ class UsersController < ApplicationController
 
   # DELETE /users/1
   def destroy
+    authorize @users
     @user.destroy
   end
 
