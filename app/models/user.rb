@@ -2,8 +2,11 @@
 
 class User < ApplicationRecord
   rolify
-  has_many :jogging_times
+  # has_many :jogging_times
   after_create :assign_default_role
+
+  # has_many :jogging_times, through: :roles, source: :resource, source_type:  :JoggingTime
+  has_many :jogging_times, ->  { where(:roles => {name: :creator}) }, through: :roles, source: :resource, source_type:  :JoggingTime
 
   validate :must_have_a_role, on: :update
 

@@ -10,15 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_08_175044) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_08_143528) do
   create_table "jogging_times", force: :cascade do |t|
     t.integer "distance"
     t.date "date"
     t.time "time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id", null: false
-    t.index ["user_id"], name: "index_jogging_times_on_user_id"
   end
 
   create_table "jwt_denylist", force: :cascade do |t|
@@ -59,5 +57,4 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_08_175044) do
     t.index ["user_id"], name: "index_users_roles_on_user_id"
   end
 
-  add_foreign_key "jogging_times", "users"
 end
