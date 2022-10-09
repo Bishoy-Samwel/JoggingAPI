@@ -19,6 +19,7 @@ class JoggingTimesController < ApplicationController
     @jogging_time = JoggingTime.new(jogging_time_params)
 
     if @jogging_time.save
+      current_user.add_role :creator, @jogging_time
       render json: @jogging_time, status: :created, location: @jogging_time
     else
       render json: @jogging_time.errors, status: :unprocessable_entity
