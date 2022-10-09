@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
-    authorize @users
+    authorize @user
     render json: @user
   end
 
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1
   def update
-    authorize @users
+    authorize @user
     if @user.update(user_params)
       render json: @user
     else
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
 
   # DELETE /users/1
   def destroy
-    authorize @users
+    authorize @user
     @user.destroy
   end
 
