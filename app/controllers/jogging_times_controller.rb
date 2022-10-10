@@ -42,6 +42,12 @@ class JoggingTimesController < ApplicationController
     @jogging_time.destroy
   end
 
+  def filter
+    render json: current_user.jogging_times.where('date >= :start_date AND date <= :end_date', {
+                                                    start_date: params[:fromDate], end_date: params[:toDate]
+                                                  })
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
