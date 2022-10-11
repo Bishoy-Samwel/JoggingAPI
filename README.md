@@ -13,23 +13,24 @@
 - [Acknowledgements](#acknowledgements)
 - [Show your support](#show-your-support)
 
-
 ## About Project
 
 A RESTful API that tracks the jogging times of users.
 
 ## Functionality requirements
+
 - Authentication: Create account / login / logout. ☑️
 - When logged in, a user can view, edit and delete entered `jogging times`. ☑️
 - Authorization Implement three roles with different permission levels:
-    - A regular user would only be able to CRUD on their owned records, ☑️
-    - A user manager would be able to CRUD users, ☑️
-    - an admin would be able to CRUD all records and users. ☑️
+  - A regular user would only be able to CRUD on their owned records, ☑️
+  - A user manager would be able to CRUD users, ☑️
+  - an admin would be able to CRUD all records and users. ☑️
 - Analysis
-    - Filter dates by from to. ☑️
-    - Report on
-        - average speed & ☑️
-        - distance per week.  ☑️
+  - Filter dates by from to. ☑️
+  - Report on
+    - average speed & ☑️
+    - distance per week. ☑️
+
 ## Built With
 
 - Ruby '3.0.1'
@@ -50,33 +51,35 @@ A RESTful API that tracks the jogging times of users.
   ```
 
 **Credentials**
+
 - Generate a Key
+
 ```bash
-rake secret 
+rake secret
 ```
+
 - Copy the key
 
 ```bash<
 EDITOR="code --wait" rails credentials:edit --environment=development
 ```
+
 - Add and past the key here
+
 ```bash
 devise:
  jwt_secret_key: key>
 ```
-
 
 - On the comandline, at the project's root, run `bundle i` to install app dependencies
 - `rails db:create`
 - `rails db:migrate`
 - `rails start`
 
-
 - Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-
-
 ## API Interactions
+
 [JoggingAPI.postman_collection.json](JoggingAPI.postman_collection.json)
 
 ## Contributing
@@ -98,6 +101,7 @@ Feel free to check the [issues page](https://github.com/Bishoy-Samwel/JoggingAPI
 - GitHub: [@Bishoy Samwel Faheem](https://github.com/Bishoy-Samwel)
 - LinkedIn: [Bishoy Samwel](https://www.linkedin.com/in/bishoy-samwuel-ss/)
 - Twitter: [@bisho](https://twitter.com/BishoFaheem15)
+
 ## Acknowledgements
 
 - [Rolify](https://github.com/RolifyCommunity/rolify)
