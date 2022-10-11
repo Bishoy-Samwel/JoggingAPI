@@ -12,7 +12,7 @@ class JoggingTimesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create jogging_time" do
     assert_difference("JoggingTime.count") do
-      post jogging_times_url, params: { jogging_time: {  } }, as: :json
+      post jogging_times_url, params: {jogging_time: {}}, as: :json
     end
 
     assert_response :created
@@ -24,7 +24,7 @@ class JoggingTimesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update jogging_time" do
-    patch jogging_time_url(@jogging_time), params: { jogging_time: {  } }, as: :json
+    patch jogging_time_url(@jogging_time), params: {jogging_time: {}}, as: :json
     assert_response :success
   end
 

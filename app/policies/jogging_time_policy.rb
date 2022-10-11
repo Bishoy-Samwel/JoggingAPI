@@ -31,5 +31,4 @@ class JoggingTimePolicy < ApplicationPolicy
   def delete?
     true
   end
-
 end

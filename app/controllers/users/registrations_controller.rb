@@ -13,13 +13,13 @@ module Users
     def register_success
       render json: {
         code: 200,
-        message: 'Signed up.',
+        message: "Signed up.",
         user: current_user
       }, status: :ok
     end
 
     def register_failed
-      render json: { message: "Signed up failure.", errors: @user.errors.full_messages }, status: :unprocessable_entity
+      render json: {message: "Signed up failure.", errors: @user.errors.full_messages}, status: :unprocessable_entity
     end
   end
 end
