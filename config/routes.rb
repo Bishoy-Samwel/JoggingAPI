@@ -4,14 +4,19 @@ Rails.application.routes.draw do
   resources :users
   resources :jogging_times
 
-  get 'jogging_times/:fromDate/to/:toDate', to: 'jogging_times#filter'
+  get 'jogging_times/filter/:fromDate/to/:toDate', to: 'jogging_times#filter'
+
+  get 'jogging_times/report/avg_distance', to: 'jogging_times#report_avg_distance'
+
+  get 'jogging_times/report/avg_speed', to: 'jogging_times#report_avg_speeds'
+
   get 'current_user/index'
   devise_for :users,
              path: '', path_names: {
-                         sign_in: 'login',
-                         sign_out: 'logout',
-                         registration: 'signup'
-                       },
+      sign_in: 'login',
+      sign_out: 'logout',
+      registration: 'signup'
+    },
 
              controllers: {
                sessions: 'users/sessions',
