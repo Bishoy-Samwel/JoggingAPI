@@ -10,14 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_10_230403) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_11_104804) do
   create_table "jogging_times", force: :cascade do |t|
-    t.integer "distance"
+    t.decimal "distance"
     t.date "date"
-    t.integer "time"
+    t.decimal "time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "week"
+    t.decimal "decimal"
+    t.decimal "speed"
   end
 
   create_table "jwt_denylist", force: :cascade do |t|
