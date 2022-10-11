@@ -4,7 +4,7 @@
 
 - [Table of Contents](#table-of-contents)
 - [About Project](#about-project)
-- [Functionality](#Functionality requirements)
+- [Functionality](#Functionality-requirements)
 - [Built With](#built-with)
 - [Getting Started](#getting-started)
 - [API Interactions](#api-interactions)
