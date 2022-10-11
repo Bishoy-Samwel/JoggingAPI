@@ -24,6 +24,7 @@ class JoggingTimesController < ApplicationController
       current_user.add_role :creator, @jogging_time
       #todo use a callback function like before_save
       @jogging_time.week = @jogging_time.date.cweek
+      @jogging_time.speed = @jogging_time.distance / @jogging_time.time
       @jogging_time.save
       render json: @jogging_time, status: :created, location: @jogging_time
     else
@@ -59,9 +60,7 @@ class JoggingTimesController < ApplicationController
 
   def report_avg_speeds
     #todo use scope
-    speeds = current_user.jogging_times.select(("distance/time"))
-    # render json: current_user.jogging_times.group(:week).average('distance/time')
-    render json: speeds
+    render json: current_user.jogging_times.group(:week).average(:speed)
   end
   private
 
