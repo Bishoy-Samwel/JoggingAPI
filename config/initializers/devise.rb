@@ -9,14 +9,13 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
-
   config.jwt do |jwt|
     jwt.secret = Rails.application.credentials.devise[:jwt_secret_key]
     jwt.dispatch_requests = [
-      ['POST', %r{^/login$}]
+      ["POST", %r{^/login$}]
     ]
     jwt.revocation_requests = [
-      ['DELETE', %r{^/logout$}]
+      ["DELETE", %r{^/logout$}]
     ]
     jwt.expiration_time = 15.day.to_i
   end
@@ -28,8 +27,6 @@ Devise.setup do |config|
   # You can change it below and use your own secret key.
   # config.secret_key = 'c934fdc065d393c4b18232f7e8bfacbff062db1fd56335d7c87c2a5cd9feff499d98df22ef6b97838eb0b8dd54cc1eca05768df8034d52f45db487443a4f36c2'
 
-
-
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
@@ -38,7 +35,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  config.mailer_sender = "please-change-me-at-config-initializers-devise@example.com"
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -50,7 +47,7 @@ Devise.setup do |config|
   # Load and configure the ORM. Supports :active_record (default) and
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
-  require 'devise/orm/active_record'
+  require "devise/orm/active_record"
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
@@ -278,7 +275,6 @@ Devise.setup do |config|
   #
   # The "*/*" below is required to match Internet Explorer requests.
   config.navigational_formats = []
-
 
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete

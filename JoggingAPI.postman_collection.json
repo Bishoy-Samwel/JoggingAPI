@@ -1,342 +1,293 @@
 {
-	"info": {
-		"_postman_id": "ca3ed9ce-9050-4d1a-b3dd-fffdd284e4e9",
-		"name": "JoggingAPI",
-		"description": "A RESTful API that tracks the jogging times of users.",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "23652689"
-	},
-	"item": [
-		{
-			"name": "signup",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{ \"user\": { \"email\": \"myemai2@email.com\", \"password\": \"mypassword\" } }\n"
-				},
-				"url": {
-					"raw": "http://localhost:3000/signup?user[email]=myemai@email.com&user[password]=1234567",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"signup"
-					],
-					"query": [
-						{
-							"key": "user[email]",
-							"value": "myemai@email.com"
-						},
-						{
-							"key": "user[password]",
-							"value": "1234567"
-						}
-					]
-				},
-				"description": "To create a new user provide a unique email and password"
-			},
-			"response": []
-		},
-		{
-			"name": "login",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{ \"user\": { \"email\": \"myemai2@email.com\", \"password\": \"mypassword\" } }\n"
-				},
-				"url": {
-					"raw": "http://localhost:3000/login?user[email]=myemai@email.com&user[password]=1234567",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"login"
-					],
-					"query": [
-						{
-							"key": "user[email]",
-							"value": "myemai@email.com"
-						},
-						{
-							"key": "user[password]",
-							"value": "1234567"
-						}
-					]
-				},
-				"description": "To login provide the correct email and password"
-			},
-			"response": []
-		},
-		{
-			"name": "logout",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/logout",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"logout"
-					]
-				},
-				"description": "To logout provide the bearer token, that you got from login rendpoint response"
-			},
-			"response": []
-		},
-		{
-			"name": "users",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/users",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"users"
-					]
-				},
-				"description": "You can get the users only if the user role is _admin_ or _manager_"
-			},
-			"response": []
-		},
-		{
-			"name": "jogging_times",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNSIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY2NTE3OTM0OSwiZXhwIjoxNjY2NDc1MzQ5LCJqdGkiOiI4ZTQ5N2FhYy03NzczLTQxNjktODIxYi04ZmY2MmQ1NjA3NjkifQ.g8G62fGg3A-VekBEFe8HEfJqE_YC2ZsB2slPk0IgAWw",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/jogging_times?jogging_time[distance]=300&jogging_time[date]=2-2-2021&jogging_time[time]=100",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"jogging_times"
-					],
-					"query": [
-						{
-							"key": "jogging_time[distance]",
-							"value": "300"
-						},
-						{
-							"key": "jogging_time[date]",
-							"value": "2-2-2021"
-						},
-						{
-							"key": "jogging_time[time]",
-							"value": "100"
-						}
-					]
-				},
-				"description": "To create a new record you need to provide the distance, time(duration), date"
-			},
-			"response": []
-		},
-		{
-			"name": "jogging_times",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNSIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY2NTE3OTM0OSwiZXhwIjoxNjY2NDc1MzQ5LCJqdGkiOiI4ZTQ5N2FhYy03NzczLTQxNjktODIxYi04ZmY2MmQ1NjA3NjkifQ.g8G62fGg3A-VekBEFe8HEfJqE_YC2ZsB2slPk0IgAWw",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/jogging_times",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"jogging_times"
-					]
-				},
-				"description": "If the user is regular they will only see their records,  \nIf the user is admin they will see all the records of all users"
-			},
-			"response": []
-		},
-		{
-			"name": "jogging_times",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNSIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY2NTE3OTM0OSwiZXhwIjoxNjY2NDc1MzQ5LCJqdGkiOiI4ZTQ5N2FhYy03NzczLTQxNjktODIxYi04ZmY2MmQ1NjA3NjkifQ.g8G62fGg3A-VekBEFe8HEfJqE_YC2ZsB2slPk0IgAWw",
-							"type": "string"
-						}
-					]
-				},
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/jogging_times/2",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"jogging_times",
-						"2"
-					]
-				},
-				"description": "To delete a specific record provide the correct id,  \nIf the user is admin they can delete any record."
-			},
-			"response": []
-		},
-		{
-			"name": "Filter jogging_times",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNSIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY2NTE3OTM0OSwiZXhwIjoxNjY2NDc1MzQ5LCJqdGkiOiI4ZTQ5N2FhYy03NzczLTQxNjktODIxYi04ZmY2MmQ1NjA3NjkifQ.g8G62fGg3A-VekBEFe8HEfJqE_YC2ZsB2slPk0IgAWw",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/jogging_times/filter/:fromDate/to/:toDate",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"jogging_times",
-						"filter",
-						":fromDate",
-						"to",
-						":toDate"
-					],
-					"variable": [
-						{
-							"key": "fromDate",
-							"value": "2020-1-1"
-						},
-						{
-							"key": "toDate",
-							"value": "2022-1-1"
-						}
-					]
-				},
-				"description": "To filter the records by date provide fromDate and toDate"
-			},
-			"response": []
-		},
-		{
-			"name": "Report jogging_times avg distance",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNSIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY2NTE3OTM0OSwiZXhwIjoxNjY2NDc1MzQ5LCJqdGkiOiI4ZTQ5N2FhYy03NzczLTQxNjktODIxYi04ZmY2MmQ1NjA3NjkifQ.g8G62fGg3A-VekBEFe8HEfJqE_YC2ZsB2slPk0IgAWw",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/jogging_times/report/avg_distance",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"jogging_times",
-						"report",
-						"avg_distance"
-					]
-				},
-				"description": "You can see the average distance grouped by the (n)th week of the year."
-			},
-			"response": []
-		},
-		{
-			"name": "Report jogging_times avgg speed",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNSIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY2NTE3OTM0OSwiZXhwIjoxNjY2NDc1MzQ5LCJqdGkiOiI4ZTQ5N2FhYy03NzczLTQxNjktODIxYi04ZmY2MmQ1NjA3NjkifQ.g8G62fGg3A-VekBEFe8HEfJqE_YC2ZsB2slPk0IgAWw",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/jogging_times/report/avg_speed",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"jogging_times",
-						"report",
-						"avg_speed"
-					]
-				},
-				"description": "You can see the average speed grouped by the (n)th week of the year."
-			},
-			"response": []
-		}
-	],
-	"variable": [
-		{
-			"key": "Authorization token",
-			"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNiIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY2NTE3NzU0OCwiZXhwIjoxNjY2NDczNTQ4LCJqdGkiOiJjNDdmZDRhMy0zOGE1LTRmMjYtODNmNS0xNjVjODk5ZDViNTcifQ.3vqjDkHwfH_bOCoMn-nGu54SO2UERfOgP_r0R8S49Oo"
-		},
-		{
-			"key": "token",
-			"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNSIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY2NTE3ODg1MiwiZXhwIjoxNjY2NDc0ODUyLCJqdGkiOiI4YzIyNjdmNC0wMjBhLTQxYjMtYjg0NC00M2MyMTE0NDNhN2QifQ.QN07g_F2Hc0U3SQ235ctEwkopALgNogRv7Ak_ICoGLw"
-		}
-	]
+  "info": {
+    "_postman_id": "ca3ed9ce-9050-4d1a-b3dd-fffdd284e4e9",
+    "name": "JoggingAPI",
+    "description": "A RESTful API that tracks the jogging times of users.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "23652689"
+  },
+  "item": [
+    {
+      "name": "signup",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"user\": { \"email\": \"myemai2@email.com\", \"password\": \"mypassword\" } }\n"
+        },
+        "url": {
+          "raw": "http://localhost:3000/signup?user[email]=myemai@email.com&user[password]=1234567",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["signup"],
+          "query": [
+            {
+              "key": "user[email]",
+              "value": "myemai@email.com"
+            },
+            {
+              "key": "user[password]",
+              "value": "1234567"
+            }
+          ]
+        },
+        "description": "To create a new user provide a unique email and password"
+      },
+      "response": []
+    },
+    {
+      "name": "login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"user\": { \"email\": \"myemai2@email.com\", \"password\": \"mypassword\" } }\n"
+        },
+        "url": {
+          "raw": "http://localhost:3000/login?user[email]=myemai@email.com&user[password]=1234567",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["login"],
+          "query": [
+            {
+              "key": "user[email]",
+              "value": "myemai@email.com"
+            },
+            {
+              "key": "user[password]",
+              "value": "1234567"
+            }
+          ]
+        },
+        "description": "To login provide the correct email and password"
+      },
+      "response": []
+    },
+    {
+      "name": "logout",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/logout",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["logout"]
+        },
+        "description": "To logout provide the bearer token, that you got from login rendpoint response"
+      },
+      "response": []
+    },
+    {
+      "name": "users",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/users",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["users"]
+        },
+        "description": "You can get the users only if the user role is _admin_ or _manager_"
+      },
+      "response": []
+    },
+    {
+      "name": "jogging_times",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNSIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY2NTE3OTM0OSwiZXhwIjoxNjY2NDc1MzQ5LCJqdGkiOiI4ZTQ5N2FhYy03NzczLTQxNjktODIxYi04ZmY2MmQ1NjA3NjkifQ.g8G62fGg3A-VekBEFe8HEfJqE_YC2ZsB2slPk0IgAWw",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/jogging_times?jogging_time[distance]=300&jogging_time[date]=2-2-2021&jogging_time[time]=100",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["jogging_times"],
+          "query": [
+            {
+              "key": "jogging_time[distance]",
+              "value": "300"
+            },
+            {
+              "key": "jogging_time[date]",
+              "value": "2-2-2021"
+            },
+            {
+              "key": "jogging_time[time]",
+              "value": "100"
+            }
+          ]
+        },
+        "description": "To create a new record you need to provide the distance, time(duration), date"
+      },
+      "response": []
+    },
+    {
+      "name": "jogging_times",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNSIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY2NTE3OTM0OSwiZXhwIjoxNjY2NDc1MzQ5LCJqdGkiOiI4ZTQ5N2FhYy03NzczLTQxNjktODIxYi04ZmY2MmQ1NjA3NjkifQ.g8G62fGg3A-VekBEFe8HEfJqE_YC2ZsB2slPk0IgAWw",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/jogging_times",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["jogging_times"]
+        },
+        "description": "If the user is regular they will only see their records,  \nIf the user is admin they will see all the records of all users"
+      },
+      "response": []
+    },
+    {
+      "name": "jogging_times",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNSIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY2NTE3OTM0OSwiZXhwIjoxNjY2NDc1MzQ5LCJqdGkiOiI4ZTQ5N2FhYy03NzczLTQxNjktODIxYi04ZmY2MmQ1NjA3NjkifQ.g8G62fGg3A-VekBEFe8HEfJqE_YC2ZsB2slPk0IgAWw",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/jogging_times/2",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["jogging_times", "2"]
+        },
+        "description": "To delete a specific record provide the correct id,  \nIf the user is admin they can delete any record."
+      },
+      "response": []
+    },
+    {
+      "name": "Filter jogging_times",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNSIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY2NTE3OTM0OSwiZXhwIjoxNjY2NDc1MzQ5LCJqdGkiOiI4ZTQ5N2FhYy03NzczLTQxNjktODIxYi04ZmY2MmQ1NjA3NjkifQ.g8G62fGg3A-VekBEFe8HEfJqE_YC2ZsB2slPk0IgAWw",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/jogging_times/filter/:fromDate/to/:toDate",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["jogging_times", "filter", ":fromDate", "to", ":toDate"],
+          "variable": [
+            {
+              "key": "fromDate",
+              "value": "2020-1-1"
+            },
+            {
+              "key": "toDate",
+              "value": "2022-1-1"
+            }
+          ]
+        },
+        "description": "To filter the records by date provide fromDate and toDate"
+      },
+      "response": []
+    },
+    {
+      "name": "Report jogging_times avg distance",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNSIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY2NTE3OTM0OSwiZXhwIjoxNjY2NDc1MzQ5LCJqdGkiOiI4ZTQ5N2FhYy03NzczLTQxNjktODIxYi04ZmY2MmQ1NjA3NjkifQ.g8G62fGg3A-VekBEFe8HEfJqE_YC2ZsB2slPk0IgAWw",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/jogging_times/report/avg_distance",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["jogging_times", "report", "avg_distance"]
+        },
+        "description": "You can see the average distance grouped by the (n)th week of the year."
+      },
+      "response": []
+    },
+    {
+      "name": "Report jogging_times avgg speed",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNSIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY2NTE3OTM0OSwiZXhwIjoxNjY2NDc1MzQ5LCJqdGkiOiI4ZTQ5N2FhYy03NzczLTQxNjktODIxYi04ZmY2MmQ1NjA3NjkifQ.g8G62fGg3A-VekBEFe8HEfJqE_YC2ZsB2slPk0IgAWw",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/jogging_times/report/avg_speed",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["jogging_times", "report", "avg_speed"]
+        },
+        "description": "You can see the average speed grouped by the (n)th week of the year."
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "Authorization token",
+      "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNiIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY2NTE3NzU0OCwiZXhwIjoxNjY2NDczNTQ4LCJqdGkiOiJjNDdmZDRhMy0zOGE1LTRmMjYtODNmNS0xNjVjODk5ZDViNTcifQ.3vqjDkHwfH_bOCoMn-nGu54SO2UERfOgP_r0R8S49Oo"
+    },
+    {
+      "key": "token",
+      "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNSIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY2NTE3ODg1MiwiZXhwIjoxNjY2NDc0ODUyLCJqdGkiOiI4YzIyNjdmNC0wMjBhLTQxYjMtYjg0NC00M2MyMTE0NDNhN2QifQ.QN07g_F2Hc0U3SQ235ctEwkopALgNogRv7Ak_ICoGLw"
+    }
+  ]
 }

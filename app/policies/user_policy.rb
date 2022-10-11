@@ -25,5 +25,4 @@ class UserPolicy < ApplicationPolicy
   def delete?
     @user.has_any_role? :manager, :admin
   end
-
 end

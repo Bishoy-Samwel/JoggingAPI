@@ -22,7 +22,7 @@ class JoggingTimesController < ApplicationController
     @jogging_time = JoggingTime.new(jogging_time_params)
     if @jogging_time.save
       current_user.add_role :creator, @jogging_time
-      #todo use a callback function like before_save
+      # todo use a callback function like before_save
       @jogging_time.week = @jogging_time.date.cweek
       @jogging_time.speed = @jogging_time.distance / @jogging_time.time
       @jogging_time.save
@@ -47,21 +47,22 @@ class JoggingTimesController < ApplicationController
   end
 
   def filter
-    #todo use a scope for a skinny controller and reusablity
-    render json: current_user.jogging_times.where('date >= :start_date AND date <= :end_date', {
+    # todo use a scope for a skinny controller and reusablity
+    render json: current_user.jogging_times.where("date >= :start_date AND date <= :end_date", {
       start_date: params[:fromDate], end_date: params[:toDate]
     })
   end
 
   def report_avg_distance
-    #todo use scope
+    # todo use scope
     render json: current_user.jogging_times.group(:week).average(:distance)
   end
 
   def report_avg_speeds
-    #todo use scope
+    # todo use scope
     render json: current_user.jogging_times.group(:week).average(:speed)
   end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
@@ -69,7 +70,7 @@ class JoggingTimesController < ApplicationController
     if policy_scope(JoggingTime).find(params[:id]).present?
       @jogging_time = policy_scope(JoggingTime).find(params[:id])
     else
-      render json: { error: 'Unauthorized request' }, status: 401
+      render json: {error: "Unauthorized request"}, status: 401
     end
   end
 
