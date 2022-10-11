@@ -68,7 +68,7 @@ EDITOR="code --wait" rails credentials:edit --environment=development
 
 ```bash
 devise:
- jwt_secret_key: key>
+ jwt_secret_key: <key>
 ```
 
 - On the comandline, at the project's root, run `bundle i` to install app dependencies
