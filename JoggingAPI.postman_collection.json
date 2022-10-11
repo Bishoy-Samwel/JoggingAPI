@@ -19,13 +19,9 @@
         "url": {
           "raw": "http://localhost:3000/signup?user[email]=myemai@email.com&user[password]=1234567",
           "protocol": "http",
-          "host": [
-            "localhost"
-          ],
+          "host": ["localhost"],
           "port": "3000",
-          "path": [
-            "signup"
-          ],
+          "path": ["signup"],
           "query": [
             {
               "key": "user[email]",
@@ -53,13 +49,9 @@
         "url": {
           "raw": "http://localhost:3000/login?user[email]=myemai@email.com&user[password]=1234567",
           "protocol": "http",
-          "host": [
-            "localhost"
-          ],
+          "host": ["localhost"],
           "port": "3000",
-          "path": [
-            "login"
-          ],
+          "path": ["login"],
           "query": [
             {
               "key": "user[email]",
@@ -83,13 +75,9 @@
         "url": {
           "raw": "http://localhost:3000/logout",
           "protocol": "http",
-          "host": [
-            "localhost"
-          ],
+          "host": ["localhost"],
           "port": "3000",
-          "path": [
-            "logout"
-          ]
+          "path": ["logout"]
         },
         "description": "To logout provide the bearer token, that you got from login rendpoint response"
       },
@@ -103,13 +91,9 @@
         "url": {
           "raw": "http://localhost:3000/users",
           "protocol": "http",
-          "host": [
-            "localhost"
-          ],
+          "host": ["localhost"],
           "port": "3000",
-          "path": [
-            "users"
-          ]
+          "path": ["users"]
         },
         "description": "You can get the users only if the user role is _admin_ or _manager_"
       },
@@ -133,13 +117,9 @@
         "url": {
           "raw": "http://localhost:3000/jogging_times?jogging_time[distance]=300&jogging_time[date]=2-2-2021&jogging_time[time]=100",
           "protocol": "http",
-          "host": [
-            "localhost"
-          ],
+          "host": ["localhost"],
           "port": "3000",
-          "path": [
-            "jogging_times"
-          ],
+          "path": ["jogging_times"],
           "query": [
             {
               "key": "jogging_time[distance]",
@@ -177,13 +157,9 @@
         "url": {
           "raw": "http://localhost:3000/jogging_times",
           "protocol": "http",
-          "host": [
-            "localhost"
-          ],
+          "host": ["localhost"],
           "port": "3000",
-          "path": [
-            "jogging_times"
-          ]
+          "path": ["jogging_times"]
         },
         "description": "If the user is regular they will only see their records,  \nIf the user is admin they will see all the records of all users"
       },
@@ -207,14 +183,9 @@
         "url": {
           "raw": "http://localhost:3000/jogging_times/2",
           "protocol": "http",
-          "host": [
-            "localhost"
-          ],
+          "host": ["localhost"],
           "port": "3000",
-          "path": [
-            "jogging_times",
-            "2"
-          ]
+          "path": ["jogging_times", "2"]
         },
         "description": "To delete a specific record provide the correct id,  \nIf the user is admin they can delete any record."
       },
@@ -238,17 +209,9 @@
         "url": {
           "raw": "http://localhost:3000/jogging_times/filter/:fromDate/to/:toDate",
           "protocol": "http",
-          "host": [
-            "localhost"
-          ],
+          "host": ["localhost"],
           "port": "3000",
-          "path": [
-            "jogging_times",
-            "filter",
-            ":fromDate",
-            "to",
-            ":toDate"
-          ],
+          "path": ["jogging_times", "filter", ":fromDate", "to", ":toDate"],
           "variable": [
             {
               "key": "fromDate",
@@ -282,15 +245,9 @@
         "url": {
           "raw": "http://localhost:3000/jogging_times/report/avg_distance",
           "protocol": "http",
-          "host": [
-            "localhost"
-          ],
+          "host": ["localhost"],
           "port": "3000",
-          "path": [
-            "jogging_times",
-            "report",
-            "avg_distance"
-          ]
+          "path": ["jogging_times", "report", "avg_distance"]
         },
         "description": "You can see the average distance grouped by the (n)th week of the year."
       },
@@ -314,15 +271,9 @@
         "url": {
           "raw": "http://localhost:3000/jogging_times/report/avg_speed",
           "protocol": "http",
-          "host": [
-            "localhost"
-          ],
+          "host": ["localhost"],
           "port": "3000",
-          "path": [
-            "jogging_times",
-            "report",
-            "avg_speed"
-          ]
+          "path": ["jogging_times", "report", "avg_speed"]
         },
         "description": "You can see the average speed grouped by the (n)th week of the year."
       },
